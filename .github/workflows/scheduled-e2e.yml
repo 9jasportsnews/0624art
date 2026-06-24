@@ -6,7 +6,7 @@ on:
       smoke_only:
         description: "只跑 1 項快速測試"
         type: boolean
-        default: true
+        default: false
   schedule:
     - cron: "45 1 * * *"
 
