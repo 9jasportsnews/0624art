@@ -63,7 +63,7 @@ jobs:
 
       - name: 執行測試
         run: |
-          if [ "${{ inputs.smoke_only }}" = "true" ]; then
+          if [ "${{ inputs.smoke_only }}" = "false" ]; then
             npx playwright test tests/recorded/desktop-download.spec.ts -g "電腦版-進入首頁" --project=desktop-chrome
           else
             npx playwright test tests/recorded
