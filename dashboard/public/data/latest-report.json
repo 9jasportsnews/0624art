@@ -1,0 +1,337 @@
+{
+  "ok": false,
+  "exitCode": 1,
+  "suite": "all",
+  "summary": {
+    "total": 5,
+    "passed": 2,
+    "failed": 2,
+    "skipped": 0,
+    "durationMs": 162170.042
+  },
+  "tests": [
+    {
+      "id": "desktop-download",
+      "label": "電腦版首頁下載檢查",
+      "title": "recorded/desktop-download.spec.ts › 電腦版-進入首頁點擊download按鈕",
+      "file": "recorded/desktop-download.spec.ts",
+      "status": "timedOut",
+      "durationMs": 92321,
+      "error": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m",
+      "steps": [
+        {
+          "title": "開啟首頁",
+          "status": "passed",
+          "durationMs": 735,
+          "error": null
+        },
+        {
+          "title": "關閉彈窗",
+          "status": "failed",
+          "durationMs": 91381,
+          "error": "Error: locator.click: Test timeout of 90000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('dialog').getByRole('button').filter({ hasText: /^$/ })\u001b[22m\n"
+        }
+      ],
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/Users/doraemon/Documents/sunny/web/check-web-playwright/test-results/recorded-desktop-download-電腦版-進入首頁點擊download按鈕-desktop-chrome/test-failed-1.png"
+        },
+        {
+          "name": "video",
+          "contentType": "video/webm",
+          "path": "/Users/doraemon/Documents/sunny/web/check-web-playwright/test-results/recorded-desktop-download-電腦版-進入首頁點擊download按鈕-desktop-chrome/video.webm"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/Users/doraemon/Documents/sunny/web/check-web-playwright/test-results/recorded-desktop-download-電腦版-進入首頁點擊download按鈕-desktop-chrome/error-context.md"
+        }
+      ]
+    },
+    {
+      "id": "homepage-nav-download",
+      "label": "開啟首頁進入下載頁面",
+      "title": "recorded/homepage-navigation.spec.ts › 開啟首頁進入下載頁面",
+      "file": "recorded/homepage-navigation.spec.ts",
+      "status": "failed",
+      "durationMs": 36646,
+      "error": "Error: 找不到下載按鈕\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div.social-btn-block.friendlink-menu-nav[alt=\"APP Download\"]').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - 找不到下載按鈕 with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('div.social-btn-block.friendlink-menu-nav[alt=\"APP Download\"]').first()\u001b[22m\n",
+      "steps": [
+        {
+          "title": "載入首頁並關閉彈窗",
+          "status": "passed",
+          "durationMs": 20600,
+          "error": null
+        },
+        {
+          "title": "點擊「下載」並驗證導向",
+          "status": "failed",
+          "durationMs": 15013,
+          "error": "Error: 找不到下載按鈕\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div.social-btn-block.friendlink-menu-nav[alt=\"APP Download\"]').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - 找不到下載按鈕 with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('div.social-btn-block.friendlink-menu-nav[alt=\"APP Download\"]').first()\u001b[22m\n"
+        }
+      ],
+      "attachments": [
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/Users/doraemon/Documents/sunny/web/check-web-playwright/test-results/recorded-homepage-navigation-開啟首頁進入下載頁面-desktop-chrome/test-failed-1.png"
+        },
+        {
+          "name": "video",
+          "contentType": "video/webm",
+          "path": "/Users/doraemon/Documents/sunny/web/check-web-playwright/test-results/recorded-homepage-navigation-開啟首頁進入下載頁面-desktop-chrome/video.webm"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/Users/doraemon/Documents/sunny/web/check-web-playwright/test-results/recorded-homepage-navigation-開啟首頁進入下載頁面-desktop-chrome/error-context.md"
+        }
+      ]
+    },
+    {
+      "id": "w01-link-check",
+      "label": "下載頁面連結檢查",
+      "title": "recorded/w01-link-check.spec.ts › 下載頁面-回首頁",
+      "file": "recorded/w01-link-check.spec.ts",
+      "status": "passed",
+      "durationMs": 1384,
+      "error": null,
+      "steps": [
+        {
+          "title": "開啟 w01 下載頁",
+          "status": "passed",
+          "durationMs": 363,
+          "error": null
+        },
+        {
+          "title": "點擊並驗證「回首頁 Return to JitaBet」",
+          "status": "passed",
+          "durationMs": 770,
+          "error": null
+        }
+      ],
+      "attachments": []
+    },
+    {
+      "id": "w01-link-check",
+      "label": "下載頁面連結檢查",
+      "title": "recorded/w01-link-check.spec.ts › 下載頁面-下載按鈕",
+      "file": "recorded/w01-link-check.spec.ts",
+      "status": "passed",
+      "durationMs": 30411,
+      "error": null,
+      "steps": [
+        {
+          "title": "開啟 w01 下載頁",
+          "status": "passed",
+          "durationMs": 167,
+          "error": null
+        },
+        {
+          "title": "點擊並驗證「ডাইনলোড ১（下載 1）」",
+          "status": "passed",
+          "durationMs": 30020,
+          "error": null
+        }
+      ],
+      "attachments": []
+    }
+  ],
+  "cases": [
+    {
+      "id": "homepage-nav-download",
+      "label": "開啟首頁進入下載頁面",
+      "file": "tests/recorded/homepage-navigation.spec.ts"
+    },
+    {
+      "id": "w01-link-check",
+      "label": "下載頁面連結檢查",
+      "file": "tests/recorded/w01-link-check.spec.ts"
+    },
+    {
+      "id": "homepage-promo",
+      "label": "首頁宣傳區檢查",
+      "file": "tests/recorded/homepage-promo.spec.ts"
+    },
+    {
+      "id": "desktop-download",
+      "label": "電腦版首頁下載檢查",
+      "file": "tests/recorded/desktop-download.spec.ts"
+    },
+    {
+      "id": "homepage-video-playback",
+      "label": "首頁影片播放檢測：可見且無播放錯誤",
+      "file": "tests/recorded/homepage-video-playback.spec.ts"
+    }
+  ],
+  "caseResults": [
+    {
+      "id": "homepage-nav-download",
+      "label": "開啟首頁進入下載頁面",
+      "status": "failed",
+      "tests": [
+        {
+          "id": "homepage-nav-download",
+          "label": "開啟首頁進入下載頁面",
+          "title": "recorded/homepage-navigation.spec.ts › 開啟首頁進入下載頁面",
+          "file": "recorded/homepage-navigation.spec.ts",
+          "status": "failed",
+          "durationMs": 36646,
+          "error": "Error: 找不到下載按鈕\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div.social-btn-block.friendlink-menu-nav[alt=\"APP Download\"]').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - 找不到下載按鈕 with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('div.social-btn-block.friendlink-menu-nav[alt=\"APP Download\"]').first()\u001b[22m\n",
+          "steps": [
+            {
+              "title": "載入首頁並關閉彈窗",
+              "status": "passed",
+              "durationMs": 20600,
+              "error": null
+            },
+            {
+              "title": "點擊「下載」並驗證導向",
+              "status": "failed",
+              "durationMs": 15013,
+              "error": "Error: 找不到下載按鈕\n\n\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('div.social-btn-block.friendlink-menu-nav[alt=\"APP Download\"]').first()\nExpected: visible\nTimeout: 15000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - 找不到下載按鈕 with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('div.social-btn-block.friendlink-menu-nav[alt=\"APP Download\"]').first()\u001b[22m\n"
+            }
+          ],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "/Users/doraemon/Documents/sunny/web/check-web-playwright/test-results/recorded-homepage-navigation-開啟首頁進入下載頁面-desktop-chrome/test-failed-1.png"
+            },
+            {
+              "name": "video",
+              "contentType": "video/webm",
+              "path": "/Users/doraemon/Documents/sunny/web/check-web-playwright/test-results/recorded-homepage-navigation-開啟首頁進入下載頁面-desktop-chrome/video.webm"
+            },
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": "/Users/doraemon/Documents/sunny/web/check-web-playwright/test-results/recorded-homepage-navigation-開啟首頁進入下載頁面-desktop-chrome/error-context.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w01-link-check",
+      "label": "下載頁面連結檢查",
+      "status": "passed",
+      "tests": [
+        {
+          "id": "w01-link-check",
+          "label": "下載頁面連結檢查",
+          "title": "recorded/w01-link-check.spec.ts › 下載頁面-回首頁",
+          "file": "recorded/w01-link-check.spec.ts",
+          "status": "passed",
+          "durationMs": 1384,
+          "error": null,
+          "steps": [
+            {
+              "title": "開啟 w01 下載頁",
+              "status": "passed",
+              "durationMs": 363,
+              "error": null
+            },
+            {
+              "title": "點擊並驗證「回首頁 Return to JitaBet」",
+              "status": "passed",
+              "durationMs": 770,
+              "error": null
+            }
+          ],
+          "attachments": []
+        },
+        {
+          "id": "w01-link-check",
+          "label": "下載頁面連結檢查",
+          "title": "recorded/w01-link-check.spec.ts › 下載頁面-下載按鈕",
+          "file": "recorded/w01-link-check.spec.ts",
+          "status": "passed",
+          "durationMs": 30411,
+          "error": null,
+          "steps": [
+            {
+              "title": "開啟 w01 下載頁",
+              "status": "passed",
+              "durationMs": 167,
+              "error": null
+            },
+            {
+              "title": "點擊並驗證「ডাইনলোড ১（下載 1）」",
+              "status": "passed",
+              "durationMs": 30020,
+              "error": null
+            }
+          ],
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "id": "homepage-promo",
+      "label": "首頁宣傳區檢查",
+      "status": "pending",
+      "tests": []
+    },
+    {
+      "id": "desktop-download",
+      "label": "電腦版首頁下載檢查",
+      "status": "failed",
+      "tests": [
+        {
+          "id": "desktop-download",
+          "label": "電腦版首頁下載檢查",
+          "title": "recorded/desktop-download.spec.ts › 電腦版-進入首頁點擊download按鈕",
+          "file": "recorded/desktop-download.spec.ts",
+          "status": "timedOut",
+          "durationMs": 92321,
+          "error": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m",
+          "steps": [
+            {
+              "title": "開啟首頁",
+              "status": "passed",
+              "durationMs": 735,
+              "error": null
+            },
+            {
+              "title": "關閉彈窗",
+              "status": "failed",
+              "durationMs": 91381,
+              "error": "Error: locator.click: Test timeout of 90000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('dialog').getByRole('button').filter({ hasText: /^$/ })\u001b[22m\n"
+            }
+          ],
+          "attachments": [
+            {
+              "name": "screenshot",
+              "contentType": "image/png",
+              "path": "/Users/doraemon/Documents/sunny/web/check-web-playwright/test-results/recorded-desktop-download-電腦版-進入首頁點擊download按鈕-desktop-chrome/test-failed-1.png"
+            },
+            {
+              "name": "video",
+              "contentType": "video/webm",
+              "path": "/Users/doraemon/Documents/sunny/web/check-web-playwright/test-results/recorded-desktop-download-電腦版-進入首頁點擊download按鈕-desktop-chrome/video.webm"
+            },
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": "/Users/doraemon/Documents/sunny/web/check-web-playwright/test-results/recorded-desktop-download-電腦版-進入首頁點擊download按鈕-desktop-chrome/error-context.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "homepage-video-playback",
+      "label": "首頁影片播放檢測：可見且無播放錯誤",
+      "status": "pending",
+      "tests": []
+    }
+  ],
+  "playwrightReportUrl": "/playwright-report/index.html",
+  "stderr": "\u001b[1A\u001b[2K(node:4745) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:4745) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:5669) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:5669) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n",
+  "startedAt": "2026-05-28T06:51:24.152Z",
+  "finishedAt": "2026-05-28T06:53:42.095Z",
+  "generatedAt": "2026-05-28T06:53:42.095Z"
+}

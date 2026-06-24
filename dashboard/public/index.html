@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>網站連結檢測</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>網站連結檢測</h1>
+        <p class="muted">
+          下方為各檢測項目是否通過；步驟與錯誤細節請見詳細檢測報告。
+        </p>
+        <p id="netlifyNote" class="netlify-note hidden">
+          Netlify：push 或 Trigger deploy 後重新整理。環境變數
+          <code>NETLIFY_TEST_SUITE</code> 可設項目 id 或 <code>all</code>。
+        </p>
+      </header>
+
+      <section class="panel controls">
+        <label for="suite">執行範圍</label>
+        <select id="suite"></select>
+        <p id="suiteNote" class="suite-note muted hidden"></p>
+
+        <button id="runBtn" type="button">開始檢測</button>
+        <p id="statusText" class="status">就緒</p>
+        <p id="lastUpdatedText" class="muted">上次更新：—</p>
+      </section>
+
+      <section class="panel summary hidden" id="summaryPanel">
+        <h2>總覽</h2>
+        <div class="summary-grid" id="summaryGrid"></div>
+      </section>
+
+      <section class="panel results hidden" id="resultsPanel">
+        <div class="results-header">
+          <h2>檢測結果</h2>
+          <!-- <a
+            id="detailReportLink"
+            class="report-link"
+            href="/playwright-report/index.html"
+            target="_blank"
+            rel="noopener"
+            >詳細檢測報告 →</a
+          > -->
+        </div>
+        <p class="muted report-note">
+          以此頁「檢測結果 / 過程」為準；詳細報告提供完整原始紀錄。
+        </p>
+        <div class="table-wrap">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>檢測項目</th>
+                <th>結果</th>
+              </tr>
+            </thead>
+            <tbody id="resultsBody"></tbody>
+          </table>
+        </div>
+        <pre id="stderrBox" class="stderr hidden"></pre>
+      </section>
+
+      <section class="panel process hidden" id="processPanel">
+        <h2>檢測過程</h2>
+        <div id="processBody"></div>
+      </section>
+    </main>
+
+    <script src="/app.js?v=20260528-1"></script>
+  </body>
+</html>

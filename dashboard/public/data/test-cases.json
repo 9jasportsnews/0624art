@@ -1,0 +1,34 @@
+{
+  "cases": [
+    {
+      "id": "homepage-nav-download",
+      "label": "開啟首頁進入下載頁面",
+      "file": "tests/recorded/homepage-navigation.spec.ts"
+    },
+    {
+      "id": "w01-link-check",
+      "label": "下載頁面連結檢查",
+      "file": "tests/recorded/w01-link-check.spec.ts"
+    },
+    {
+      "id": "homepage-promo",
+      "label": "首頁宣傳區檢查",
+      "file": "tests/recorded/homepage-promo.spec.ts"
+    },
+    {
+      "id": "desktop-download",
+      "label": "電腦版首頁下載檢查",
+      "file": "tests/recorded/desktop-download.spec.ts"
+    },
+    {
+      "id": "desktop-right-menu",
+      "label": "電腦版右側選單檢查（未登入/已登入）",
+      "file": "tests/recorded/desktop-right-menu.spec.ts"
+    },
+    {
+      "id": "homepage-index",
+      "label": "首頁 index 檢查",
+      "file": "tests/recorded/homepage-index.spec.ts"
+    }
+  ]
+}

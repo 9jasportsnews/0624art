@@ -1,0 +1,310 @@
+:root {
+  --bg: #0f1419;
+  --panel: #1a2332;
+  --text: #e8edf4;
+  --muted: #9aa8b8;
+  --accent: #3d8bfd;
+  --ok: #3ecf8e;
+  --fail: #ff6b6b;
+  --warn: #f0b429;
+  --border: #2a3648;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1a2740, var(--bg));
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+}
+
+header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.netlify-note {
+  margin-top: 0.75rem !important;
+  padding: 0.65rem 0.75rem;
+  background: rgba(61, 139, 253, 0.12);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.netlify-note code {
+  color: #9ec5ff;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-top: 1rem;
+}
+
+.controls label {
+  display: block;
+  margin-top: 0.75rem;
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.controls label.optional {
+  margin-top: 1rem;
+}
+
+.suite-note {
+  margin: 0.5rem 0 0;
+}
+
+#lastUpdatedText {
+  margin-top: 0.35rem;
+}
+
+select,
+input,
+button {
+  width: 100%;
+  font: inherit;
+}
+
+select,
+input {
+  background: #0f1419;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+}
+
+button {
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  background: linear-gradient(135deg, #3d8bfd, #2f6fd6);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+}
+
+.status.running {
+  color: var(--warn);
+}
+
+.status.ok {
+  color: var(--ok);
+}
+
+.status.fail {
+  color: var(--fail);
+}
+
+.hidden {
+  display: none;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+}
+
+.summary-card {
+  background: #0f1419;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.summary-card .label {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.summary-card .value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.65rem 0.5rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.badge.passed {
+  background: rgba(62, 207, 142, 0.15);
+  color: var(--ok);
+}
+
+.badge.failed,
+.badge.timedOut {
+  background: rgba(255, 107, 107, 0.15);
+  color: var(--fail);
+}
+
+.badge.skipped {
+  background: rgba(240, 180, 41, 0.15);
+  color: var(--warn);
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.results-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.results-header h2 {
+  margin: 0;
+}
+
+.report-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid rgba(158, 197, 255, 0.45);
+  border-radius: 8px;
+  background: rgba(61, 139, 253, 0.12);
+  color: #9ec5ff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.report-link:hover {
+  background: rgba(61, 139, 253, 0.22);
+  text-decoration: none;
+}
+
+.report-link.hidden {
+  display: none;
+}
+
+.report-note {
+  margin: -0.25rem 0 0.75rem;
+}
+
+.badge.pending {
+  background: rgba(154, 168, 184, 0.15);
+  color: var(--muted);
+}
+
+.results-table tbody tr.failed td:first-child {
+  color: #ffb4b4;
+}
+
+.results-table td:last-child {
+  width: 6rem;
+  text-align: center;
+}
+
+.stderr {
+  margin-top: 1rem;
+  background: #0f1419;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  overflow: auto;
+  color: #ffb4b4;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+}
+
+.process {
+  margin-top: 1rem;
+}
+
+.process h2 {
+  margin: 0 0 0.75rem;
+}
+
+.process-item {
+  background: #0f1419;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.process-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.45rem;
+}
+
+.process-title strong {
+  font-size: 0.95rem;
+}
+
+.process-steps {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.process-steps li {
+  margin: 0.2rem 0;
+  color: #cfd8e3;
+  font-size: 0.9rem;
+}

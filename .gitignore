@@ -1,0 +1,14 @@
+.env
+.auth/
+tests/.auth/
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+blob-runs/
+reports/
+playwright/.cache/
+*.png
+.DS_Store
+dashboard/.last-report.json
+dashboard/.build-report.json
