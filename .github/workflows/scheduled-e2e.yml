@@ -2,20 +2,91 @@ name: 定時全項檢測
 
 on:
   workflow_dispatch:
+    inputs:
+      smoke_only:
+        description: "只跑 1 項快速測試"
+        type: boolean
+        default: true
+  schedule:
+    - cron: "45 1 * * *"
+
+concurrency:
+  group: scheduled-e2e
+  cancel-in-progress: false
 
 jobs:
-  test:
+  e2e:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
 
     steps:
       - uses: actions/checkout@v4
 
+      - name: 載入 ENV_1
+        env:
+          ENV_1: ${{ secrets.ENV_1 }}
+        run: |
+          if [ -z "$ENV_1" ]; then
+            echo "::error::缺少 GitHub Secret：ENV_1"
+            exit 1
+          fi
+
+          printf "%s\n" "$ENV_1" > .env
+          echo "CI=true" >> "$GITHUB_ENV"
+          echo "GITHUB_ACTIONS=true" >> "$GITHUB_ENV"
+
+          while IFS= read -r line || [ -n "$line" ]; do
+            line="${line//$'\r'/}"
+            [[ -z "$line" ]] && continue
+            [[ "$line" =~ ^# ]] && continue
+            [[ "$line" != *"="* ]] && continue
+            echo "$line" >> "$GITHUB_ENV"
+          done < .env
+
+          echo "--- ENV 檢查 ---"
+          grep -v '^#' .env | cut -d= -f1
+
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: "22"
+          cache: npm
 
-      - run: npm ci
+      - name: 安裝依賴
+        run: npm ci
 
-      - run: npx playwright install chromium --with-deps
+      - name: 驗證 Telegram
+        continue-on-error: true
+        run: node scripts/verify-telegram-env.mjs --send
 
-      - run: npx playwright test tests/recorded
+      - name: 安裝 Playwright Chromium
+        run: npx playwright install chromium --with-deps
+
+      - name: 執行測試
+        run: |
+          if [ "${{ inputs.smoke_only }}" = "true" ]; then
+            npx playwright test tests/recorded/desktop-download.spec.ts -g "電腦版-進入首頁" --project=desktop-chrome
+          else
+            npx playwright test tests/recorded
+          fi
+
+      - name: Telegram 通知
+        if: always()
+        run: |
+          node scripts/verify-telegram-env.mjs || exit 0
+          if [ -f reports/last-run.json ]; then
+            npm run notify:telegram -- reports/last-run.json
+          else
+            echo "沒有 reports/last-run.json，略過 TG 補送"
+          fi
+
+      - name: 上傳報告 artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-${{ github.run_number }}
+          path: |
+            playwright-report
+            test-results
+            reports
+          retention-days: 90
+          if-no-files-found: warn
